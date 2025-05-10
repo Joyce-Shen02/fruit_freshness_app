@@ -19,7 +19,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Load model
 model = models.resnet50()
 model.fc = nn.Linear(model.fc.in_features, 2)  # 2 classes: fresh vs spoiled
-model.load_state_dict(torch.load("/Users/joyce/Desktop/bootcamp/virtual_intern/week5,6/resnet50_fruit.pth", map_location=device))
+model.load_state_dict(torch.load("resnet50_fruit.pth", map_location=device))
 model.to(device)
 model.eval()
 
